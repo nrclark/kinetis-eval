@@ -1,1 +1,67 @@
 EESchema-DOCLIB  Version 2.0
+#
+$CMP CONN_01X06
+D Connector, 1x6, FTDI Cable
+K connector, ftdi
+$ENDCMP
+#
+$CMP DIODE
+D Diode generic
+K diode
+$ENDCMP
+#
+$CMP DPDT
+D Switch, DPDT
+K switch dpdt
+$ENDCMP
+#
+$CMP FTDI_Connector
+D Connector, 1x6, FTDI Cable
+K connector, ftdi
+$ENDCMP
+#
+$CMP Header_2x10
+D Connector, double row, 02x10, pin header
+K connector
+$ENDCMP
+#
+$CMP JLink_SWD_20pin
+D Connector, double row, 02x10, pin header
+K connector
+$ENDCMP
+#
+$CMP LED_AK
+D LED generic
+K led diode
+$ENDCMP
+#
+$CMP MKL16Z64VLH4
+D Kinetis KL16 TFQP-64
+$ENDCMP
+#
+$CMP PTC
+D Resettable Polyfuse
+K resettable fuse PTC PPTC polyfuse polyswitch
+$ENDCMP
+#
+$CMP R
+D Resistor
+K r res resistor
+$ENDCMP
+#
+$CMP R_US
+D Resistor
+K r res resistor
+$ENDCMP
+#
+$CMP SCHOTTKY
+D Schottky diode generic
+K diode schottky
+$ENDCMP
+#
+$CMP USB_Micro_B
+D USB Micro-B Connector
+K usb,micro,connector,power
+$ENDCMP
+#
+#End Doc Library
