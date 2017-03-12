@@ -59,6 +59,11 @@ D Schottky diode generic
 K diode schottky
 $ENDCMP
 #
+$CMP SPST
+D Tactile Switch, SPST, Momentary
+K switch spst tactile
+$ENDCMP
+#
 $CMP USB_Micro_B
 D USB Micro-B Connector
 K usb,micro,connector,power
