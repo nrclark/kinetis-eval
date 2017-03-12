@@ -1,13 +1,18 @@
 EESchema-DOCLIB  Version 2.0
 #
-$CMP CONN_01X06
-D Connector, 1x6, FTDI Cable
-K connector, ftdi
+$CMP C
+D Unpolarized capacitor
+K cap capacitor
 $ENDCMP
 #
-$CMP DIODE
-D Diode generic
-K diode
+$CMP CONN_01X16
+D Connector, single row, 01x16, pin header
+K connector
+$ENDCMP
+#
+$CMP Crystal
+D Two pin crystal
+K quartz ceramic resonator oscillator
 $ENDCMP
 #
 $CMP DPDT
@@ -20,19 +25,20 @@ D Connector, 1x6, FTDI Cable
 K connector, ftdi
 $ENDCMP
 #
-$CMP Header_2x10
-D Connector, double row, 02x10, pin header
-K connector
-$ENDCMP
-#
 $CMP JLink_SWD_20pin
 D Connector, double row, 02x10, pin header
 K connector
 $ENDCMP
 #
-$CMP LED_AK
+$CMP LED
 D LED generic
 K led diode
+$ENDCMP
+#
+$CMP LM1117-ADJ
+D 800mA Low-Dropout Linear Regulator, adjustable output
+K linear regulator ldo adjustable positive
+F http://www.ti.com/lit/ds/symlink/lm1117.pdf
 $ENDCMP
 #
 $CMP MKL16Z64VLH4
@@ -45,11 +51,6 @@ K resettable fuse PTC PPTC polyfuse polyswitch
 $ENDCMP
 #
 $CMP R
-D Resistor
-K r res resistor
-$ENDCMP
-#
-$CMP R_US
 D Resistor
 K r res resistor
 $ENDCMP
