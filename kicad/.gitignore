@@ -1,2 +1,4 @@
 *.bck
 *.bak
+*-cache.lib
+*.xml
