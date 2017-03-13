@@ -5,4 +5,5 @@ Status
 ------
 
 At present, the schematic has been designed, and all parts have been picked
-out. Layout hasn't been started yet.
+out. Footprints are all designed, although they should get a final check
+before fabbing the board. Placement is partially complete.
