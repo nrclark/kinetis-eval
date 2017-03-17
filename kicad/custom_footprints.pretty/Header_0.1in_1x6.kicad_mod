@@ -1,4 +1,4 @@
-(module Header_0.1in_1x6 (layer F.Cu) (tedit 58C63720)
+(module Header_0.1in_1x6 (layer F.Cu) (tedit 58CBA52C)
   (descr "Through hole straight pin header, 1x16, 2.54mm pitch, single row")
   (tags "Through hole pin header THT 1x16 2.54mm single row")
   (fp_text reference REF** (at 0 -2.54) (layer F.SilkS)
@@ -40,8 +40,8 @@
   (pad 4 thru_hole circle (at 0 7.62) (size 1.778 1.778) (drill 1) (layers *.Cu *.Mask))
   (pad 5 thru_hole circle (at 0 10.16) (size 1.778 1.778) (drill 1) (layers *.Cu *.Mask))
   (pad 6 thru_hole circle (at 0 12.7) (size 1.778 1.778) (drill 1) (layers *.Cu *.Mask))
-  (model Pin_Headers.3dshapes/Pin_Header_Straight_1x16_Pitch2.54mm.wrl
-    (at (xyz 0 -0.75 0))
+  (model Pin_Headers.3dshapes/Pin_Header_Straight_1x06_Pitch2.54mm.wrl
+    (at (xyz 0 -0.25 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 90))
   )
