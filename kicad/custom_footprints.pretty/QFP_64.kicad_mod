@@ -1,4 +1,4 @@
-(module QFP_64 (layer F.Cu) (tedit 58C6387D)
+(module QFP_64 (layer F.Cu) (tedit 58CC10F5)
   (fp_text reference REF** (at 0 -7.62) (layer F.SilkS)
     (effects (font (size 1.27 1.27) (thickness 0.1524)))
   )
@@ -89,4 +89,9 @@
   (pad 62 smd rect (at -2.75 -5.625) (size 0.26 1.5) (layers F.Cu F.Paste F.Mask))
   (pad 63 smd rect (at -3.25 -5.625) (size 0.26 1.5) (layers F.Cu F.Paste F.Mask))
   (pad 64 smd rect (at -3.75 -5.625) (size 0.26 1.5) (layers F.Cu F.Paste F.Mask))
+  (model Housings_QFP.3dshapes/TQFP-64_1EP_10x10mm_Pitch0.5mm.wrl
+    (at (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )

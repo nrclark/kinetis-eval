@@ -1,4 +1,4 @@
-(module D_0805 (layer F.Cu) (tedit 58C63597)
+(module D_0805 (layer F.Cu) (tedit 58CC119D)
   (descr "Diode SMD in 0805 package")
   (tags "smd diode")
   (attr smd)
@@ -32,4 +32,9 @@
   (fp_line (start -0.635 0.635) (end -0.635 -0.635) (layer F.Fab) (width 0.1016))
   (pad K smd rect (at -1.016 0) (size 1.016 1.397) (layers F.Cu F.Paste F.Mask))
   (pad A smd rect (at 1.016 0) (size 1.016 1.397) (layers F.Cu F.Paste F.Mask))
+  (model LEDs.3dshapes/LED_0805.wrl
+    (at (xyz -0.006 0 0))
+    (scale (xyz 1.1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )

@@ -1,4 +1,4 @@
-(module SOD_123F (layer F.Cu) (tedit 58C63ABF)
+(module SOD_123F (layer F.Cu) (tedit 58CC2136)
   (descr "Diode SMD in 0805 package")
   (tags "smd diode")
   (attr smd)
@@ -34,4 +34,9 @@
   (fp_line (start 1.524 -0.9525) (end 1.524 -0.8255) (layer F.SilkS) (width 0.127))
   (pad K smd rect (at -1.4732 0) (size 1.27 1.27) (layers F.Cu F.Paste F.Mask))
   (pad A smd rect (at 1.4732 0) (size 1.27 1.27) (layers F.Cu F.Paste F.Mask))
+  (model ${KIPRJMOD}/models/SOD-123FL.STEP
+    (at (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 180))
+  )
 )

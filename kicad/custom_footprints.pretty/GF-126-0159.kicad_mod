@@ -1,4 +1,4 @@
-(module GF-126-0159 (layer F.Cu) (tedit 58CBA7A7)
+(module GF-126-0159 (layer F.Cu) (tedit 58CC151F)
   (descr "Through hole straight pin header, 1x16, 2.54mm pitch, single row")
   (tags "Through hole pin header THT 1x16 2.54mm single row")
   (fp_text reference REF** (at 0 -6.35) (layer F.SilkS)
@@ -30,7 +30,7 @@
   (pad C2 thru_hole circle (at 4.6 3.45) (size 2.45 2.45) (drill 1.65) (layers *.Cu *.Mask))
   (model ${KIPRJMOD}/models/c-1825080-1-b-3d.igs
     (at (xyz 0 0 0.275))
-    (scale (xyz 1.34 1.42 1))
+    (scale (xyz 1.24 1.02 1))
     (rotate (xyz 0 0 0))
   )
 )
