@@ -25,6 +25,11 @@ D Connector, 1x6, FTDI Cable
 K connector, ftdi
 $ENDCMP
 #
+$CMP HOLE
+D LED generic
+K led diode
+$ENDCMP
+#
 $CMP JLink_SWD_20pin
 D Connector, double row, 02x10, pin header
 K connector
