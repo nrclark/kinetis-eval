@@ -2617,4 +2617,6 @@ Wire Wire Line
 	9550 2000 9550 2050
 Wire Wire Line
 	9100 1650 9100 1700
+Text Label 13270 2000 2    60   ~ 0
+PWR_IN
 $EndSCHEMATC
