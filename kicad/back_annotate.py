@@ -46,8 +46,8 @@ def sort_records(records, mult = 100):
     key = lambda x: (
         x[2],
         x[3],
-        5*round(mult*x[1][1]) + round(mult*x[1][0]),
-        round(mult*x[1][0]),
+        8*round(mult*x[1][0]) + round(mult*x[1][1]),
+        round(mult*x[1][1]),
     )
     records = sorted(records, key=key)
     return records
