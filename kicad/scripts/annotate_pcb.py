@@ -258,7 +258,7 @@ def make_parser():
 
     description = """Script for renaming all components on a KiCAD PCB by their
     relative placement. Optionally back-annotates chances onto an accompanying
-    schematic. """
+    schematic. Note that KiCAD should be closed before running this script. """
 
     parser = argparse.ArgumentParser(description=description)
 
