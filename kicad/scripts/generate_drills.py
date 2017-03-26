@@ -170,9 +170,12 @@ def main():
     args.tempdir = tempfile.mkdtemp(prefix="tmp.kicad_drill-")
 
     try:
-        generate_drill_files(args)
+        retval = generate_drill_files(args)
+
         if os.path.exists(args.tempdir):
             shutil.rmtree(args.tempdir)
+
+        sys.exit(retval)
 
     except Exception as err:
         if os.path.exists(args.tempdir):
