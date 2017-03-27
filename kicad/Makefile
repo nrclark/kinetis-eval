@@ -1,54 +1,59 @@
+#--------------------------- Design-Specific Variables ------------------------#
+
 PCB_PROJECT := kinetis.kicad_pcb
 HOLE_WHITELIST := express_pcb_allowed_holes.txt 
 OUTPUT_ZIP := kinetis.zip
 WORK_DIR := output
 
+#-------------------------- Derived/Constant Variables ------------------------#
+
 DESIGN_BASE := $(basename $(PCB_PROJECT))
-ZIPPED_FILE_EXTS := gtl gbl gts gbs gto gbo gko xln
-ZIPPED_FILES := $(foreach x,$(ZIPPED_FILE_EXTS),$(WORK_DIR)/$(DESIGN_BASE).$(x))
+ZIPPED_FILE_EXTS := .gtl .gbl .gts .gbs .gto .gbo .gko .xln
+ZIPPED_FILES := $(foreach x,$(ZIPPED_FILE_EXTS),$(WORK_DIR)/$(DESIGN_BASE)$(x))
 
 KICAD_OUTPUT_EXTS := -CuTop.gbr -CuBottom.gbr -MaskTop.gbr -MaskBottom.gbr
 KICAD_OUTPUT_EXTS += -SilkTop.gbr -SilkBottom.gbr -EdgeCuts.gbr
 
 all: $(OUTPUT_ZIP)
 
-$(OUTPUT_ZIP): $(ZIPPED_FILES)
-	rm -f $@
-	zip -9TD $(abspath $@) $(abspath $^)
+#------------------------- Makefile Magic 'Pair' Macro ------------------------#
 
-%.gtl: %-CuTop.gbr
-	cp $< $@
+# This section creates a 'pair' macro that can be used to pair create
+# simple 'copy' pattern-rules.
 
-%.gbl: %-CuBottom.gbr
-	cp $< $@
+define _pair
+%$1: %$2
+	cp $$< $$@
+endef
+pair = $(eval $(call _pair,$1,$2))
 
-%.gts: %-MaskTop.gbr
-	cp $< $@
+#-------------------------------- Primary Rules -------------------------------#
 
-%.gbs: %-MaskBottom.gbr
-	cp $< $@
+$(call pair,.gtl,-CuTop.gbr)
+$(call pair,.gbl,-CuBottom.gbr)
+$(call pair,.gts,-MaskTop.gbr)
+$(call pair,.gbs,-MaskBottom.gbr)
+$(call pair,.gto,-SilkTop.gbr)
+$(call pair,.gbo,-SilkBottom.gbr)
+$(call pair,.gko,-EdgeCuts.gbr)
+$(call pair,.xln,-PTH.drl)
 
-%.gto: %-SilkTop.gbr
-	cp $< $@
-
-%.gbo: %-SilkBottom.gbr
-	cp $< $@
-
-%.gko: %-EdgeCuts.gbr
-	cp $< $@
-
-%.xln: %-PTH.drl
-	cp $< $@
+gerber: $(foreach x,$(KICAD_OUTPUT_EXTS),$(WORK_DIR)/$(DESIGN_BASE)$(x))
+drill: $(WORK_DIR)/$(DESIGN_BASE)-PTH.drl
 
 $(foreach x,$(KICAD_OUTPUT_EXTS),%$(x)): $(PCB_PROJECT)
 	mkdir -p $(dir $@)
 	rm -f $@
-	scripts/generate_gerbers.py $< -o $(WORK_DIR)
+	scripts/generate_gerbers.py $< -o $(dir $@)
 
 %-PTH.drl: $(PCB_PROJECT) $(HOLE_WHITELIST)
 	mkdir -p $(dir $@)
 	rm -f $@
 	scripts/generate_drills.py $< -o $(dir $@) -c $(HOLE_WHITELIST)
+
+$(OUTPUT_ZIP): $(ZIPPED_FILES)
+	rm -f $@
+	zip -9TD $(abspath $@) $(abspath $^)
 
 clean:
 	rm -rf $(WORK_DIR)
