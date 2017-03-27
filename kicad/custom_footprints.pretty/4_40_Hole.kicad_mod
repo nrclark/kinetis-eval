@@ -1,4 +1,4 @@
-(module 4_40_Hole (layer F.Cu) (tedit 58CB84D5)
+(module 4_40_Hole (layer F.Cu) (tedit 58D8789C)
   (descr "Mounting Hole, 4-40 ANSI, Plated")
   (tags "mounting hole 4-40 plated")
   (fp_text reference REF** (at 0 -5.3) (layer F.SilkS) hide
@@ -19,5 +19,5 @@
   (fp_text user Hole (at 0 1.651) (layer F.Fab)
     (effects (font (size 1.016 1.016) (thickness 0.1524)))
   )
-  (pad 1 thru_hole circle (at 0 0) (size 5.8928 5.8928) (drill 3.5052) (layers *.Cu *.Mask))
+  (pad 1 thru_hole circle (at 0 0) (size 5.8928 5.8928) (drill 3.5814) (layers *.Cu *.Mask))
 )
