@@ -8,12 +8,11 @@ WORK_DIR := output
 #-------------------------- Derived/Constant Variables ------------------------#
 
 DESIGN_BASE := $(basename $(PCB_PROJECT))
-ZIPPED_FILE_EXTS := .gtl .gbl .gts .gbs .gto .gbo .gko .xln
+ZIPPED_FILE_EXTS := .gtl .gbl .gts .gbs .gto .gbo .gko .xln .gtp
 ZIPPED_FILES := $(foreach x,$(ZIPPED_FILE_EXTS),$(WORK_DIR)/$(DESIGN_BASE)$(x))
 
 KICAD_OUTPUT_EXTS := -CuTop.gbr -CuBottom.gbr -MaskTop.gbr -MaskBottom.gbr
-KICAD_OUTPUT_EXTS += -SilkTop.gbr -SilkBottom.gbr -EdgeCuts.gbr
-
+KICAD_OUTPUT_EXTS += -SilkTop.gbr -SilkBottom.gbr -EdgeCuts.gbr -PasteTop.gbr
 all: $(OUTPUT_ZIP)
 
 #------------------------- Makefile Magic 'Pair' Macro ------------------------#
@@ -36,6 +35,7 @@ $(call pair,.gbs,-MaskBottom.gbr)
 $(call pair,.gto,-SilkTop.gbr)
 $(call pair,.gbo,-SilkBottom.gbr)
 $(call pair,.gko,-EdgeCuts.gbr)
+$(call pair,.gtp,-PasteTop.gbr)
 $(call pair,.xln,-PTH.drl)
 
 gerber: $(foreach x,$(KICAD_OUTPUT_EXTS),$(WORK_DIR)/$(DESIGN_BASE)$(x))
@@ -53,7 +53,7 @@ $(foreach x,$(KICAD_OUTPUT_EXTS),%$(x)): $(PCB_PROJECT)
 
 $(OUTPUT_ZIP): $(ZIPPED_FILES)
 	rm -f $@
-	zip -9TD $(abspath $@) $(abspath $^)
+	zip -9TDj $(abspath $@) $(abspath $^)
 
 clean:
 	rm -rf $(WORK_DIR)
