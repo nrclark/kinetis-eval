@@ -45,7 +45,12 @@ def check_drills(allowed_drill_file, drill_report_file, metric=False):
         drill = float(match[2][:-1])
         used_drills.append(drill)
 
-    allowed_drills = [float(x) for x in allowed_drill_data.split()]
+    allowed_drills = []
+
+    for line in allowed_drill_data.split('\n'):
+        line = re.sub("[#].*", "", line).strip()
+        if line != "":
+            allowed_drills.append(float(line))
 
     if metric:
         allowed_drills = [x / 25.4 for x in matches]
