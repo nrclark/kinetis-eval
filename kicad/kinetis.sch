@@ -27,7 +27,6 @@ LIBS:cypress
 LIBS:siliconi
 LIBS:opto
 LIBS:atmel
-LIBS:kinetis-cache
 EELAYER 26 0
 EELAYER END
 $Descr B 17000 11000
@@ -1320,8 +1319,8 @@ F 0 "R26" H 1350 5800 50  0000 L CNN
 F 1 "200" H 1350 5700 50  0000 L CNN
 F 2 "custom_footprints:SM_0805" V 1380 5600 50  0001 C CNN
 F 3 "" H 1450 5800 50  0001 C CNN
-F 4 "CTS" H 1450 5900 60  0001 C CNN "Manufacturer"
-F 5 "73L3R10J" H 1450 6000 60  0001 C CNN "Manufacturer PN"
+F 4 "Yageo" H 1450 5900 60  0001 C CNN "Manufacturer"
+F 5 "RC0805FR-07200RL" H 1450 6000 60  0001 C CNN "Manufacturer PN"
 	1    1450 5600
 	1    0    0    -1  
 $EndComp
@@ -1333,8 +1332,8 @@ F 0 "R25" H 1350 6100 50  0000 L CNN
 F 1 "200" H 1350 6000 50  0000 L CNN
 F 2 "custom_footprints:SM_0805" V 1380 5900 50  0001 C CNN
 F 3 "" H 1450 6100 50  0001 C CNN
-F 4 "CTS" H 1450 6200 60  0001 C CNN "Manufacturer"
-F 5 "73L3R10J" H 1450 6300 60  0001 C CNN "Manufacturer PN"
+F 4 "Yageo" H 1450 6200 60  0001 C CNN "Manufacturer"
+F 5 "RC0805FR-07200RL" H 1450 6300 60  0001 C CNN "Manufacturer PN"
 	1    1450 5900
 	1    0    0    -1  
 $EndComp
@@ -1424,8 +1423,8 @@ F 0 "R13" H 1350 9400 50  0000 L CNN
 F 1 "200" H 1350 9300 50  0000 L CNN
 F 2 "custom_footprints:SM_0805" V 1380 9200 50  0001 C CNN
 F 3 "" H 1450 9400 50  0001 C CNN
-F 4 "CTS" H 1450 9500 60  0001 C CNN "Manufacturer"
-F 5 "73L3R10J" H 1450 9600 60  0001 C CNN "Manufacturer PN"
+F 4 "Yageo" H 1450 9500 60  0001 C CNN "Manufacturer"
+F 5 "RC0805FR-07200RL" H 1450 9600 60  0001 C CNN "Manufacturer PN"
 	1    1450 9200
 	1    0    0    -1  
 $EndComp
@@ -1437,8 +1436,8 @@ F 0 "R14" H 1350 9100 50  0000 L CNN
 F 1 "200" H 1350 9000 50  0000 L CNN
 F 2 "custom_footprints:SM_0805" V 1380 8900 50  0001 C CNN
 F 3 "" H 1450 9100 50  0001 C CNN
-F 4 "CTS" H 1450 9200 60  0001 C CNN "Manufacturer"
-F 5 "73L3R10J" H 1450 9300 60  0001 C CNN "Manufacturer PN"
+F 4 "Yageo" H 1450 9200 60  0001 C CNN "Manufacturer"
+F 5 "RC0805FR-07200RL" H 1450 9300 60  0001 C CNN "Manufacturer PN"
 	1    1450 8900
 	1    0    0    -1  
 $EndComp
