@@ -20,12 +20,14 @@ def get_footprint(component_element):
 
     return footprint
 
+
 def get_refdes(component_element):
     """ Returns the reference designator a component. If no value is present,
     an empty string is returned. """
 
     refdes = component_element.attrib['ref']
     return refdes
+
 
 def get_value(component_element):
     """ Returns the value field of a component. If no value is present, an
@@ -37,6 +39,7 @@ def get_value(component_element):
         value = ""
 
     return value
+
 
 def get_fields(component_element):
     """ Finds and returns all custom 'field' entries associated with a
@@ -50,6 +53,7 @@ def get_fields(component_element):
             result[name] = value
     return result
 
+
 def get_components(xml_file):
     """ Returns a list of all components in the design, each represented as
     a dict. """
@@ -59,7 +63,7 @@ def get_components(xml_file):
     root = tree.getroot()
     component_elements = root.findall('components')[0].findall("*")
     results = []
-    
+
     for element in component_elements:
         component_dict = {}
         component_dict['refdes'] = get_refdes(element)
@@ -133,18 +137,25 @@ def group_items(components):
     bom_list = [x[1] for x in sorted(bom_list)]
     return bom_list
 
+
 def main():
+    """ Main BOM generation routine. """
+
     infile = os.path.abspath(os.path.normpath(sys.argv[1]))
     outfile = os.path.abspath(os.path.normpath(sys.argv[2]))
+
+    if outfile[-4:].lower() != ".txt":
+        outfile += ".txt"
 
     components = get_components(infile)
     line_items = group_items(components)
 
+    # pylint: disable=consider-using-enumerate
     for count in range(len(line_items)):
-        line_items[count]['bom_index'] = count+1
-        
+        line_items[count]['bom_index'] = str(count + 1)
+
     fields = [['Line Item', ['bom_index']]]
-    fields = [['Quantity', ['quantity']]]
+    fields.append(['Quantity', ['quantity']])
     fields.append(['Reference Designator', ['refdes']])
     fields.append(['Description', ['Description', 'value']])
     fields.append(['Value', ['value']])
@@ -168,23 +179,11 @@ def main():
 
     result = "\n".join(result_lines)
 
-    with open(outfile,'w') as handle:
-        print(result)
-        handle.write(result+"\n")
+    with open(outfile, 'w') as handle:
+        sys.stdout.write(result + "\n")
+        handle.write(result + "\n")
 
     return
-    with open(outfile,'w') as handle:
-        result_lines
-        for item in line_items:
-            print(str(item))
-            handle.write(str(item) + "\n")
 
 if __name__ == "__main__":
     main()
-
-#for component in components:
-#    print(str(component))
-
-
-
-#python "/home/david/elec/scripts/kicad_bom_perso.py" "%I" "%O.csv"
